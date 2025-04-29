@@ -33,9 +33,7 @@ This project is perfect for anyone looking to **manage personal finances** in an
 
 | Home Page | Add Expenses Form | Expenses Table |
 |:---------:|:-----------------:|:--------------:|
-| ![Home Screenshot](#) | ![Form Screenshot](#) | ![Table Screenshot](#) |
-
-*(👉 Replace `#` with your image links after uploading screenshots.)*
+👉 ![image alt](https://github.com/Nilesh-KKadam/Personal-Budget-Tracker/blob/4f9fe684271cfa81df8095b5620a348187abe3a7/Personal%20budget%20tracker.png)
 
 ---
 

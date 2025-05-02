@@ -1,7 +1,7 @@
 
 # 📒 Personal Budget Tracker 💸
 
-> **Created by:** Nilesh Kadam
+> **Created by:** Nilesh Kadam.
 
 ---
 

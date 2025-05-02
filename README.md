@@ -89,9 +89,7 @@ Special thanks to all online communities and mentors supporting beginner develop
 
 ---
 
-## 📜 License
-
-This project is licensed under the **MIT License**.  
+## 📜 License.  
 Feel free to use, modify, and distribute! 🚀
 
 ---

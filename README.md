@@ -50,17 +50,8 @@ This project is perfect for anyone looking to **manage personal finances** in an
 
 ## 🚀 How to Use
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/your-repository-name.git
-   ```
-
-2. Navigate into the project directory:
-   ```bash
-   cd personal-budget-tracker
-   ```
-
-3. Open the `index.html` file directly in your browser.
+1. Open the Link :
+2. http://famous-marshmallow-030b7e.netlify.app
 
 4. Start adding your income, expenses, and manage your budget efficiently!
 

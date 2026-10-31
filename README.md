@@ -25,7 +25,7 @@ This project is perfect for anyone looking to **manage personal finances** in an
 
 - **HTML5**
 - **CSS3** (inline styling)
-- *(No JavaScript functionalities added yet — Frontend Static Version)*
+- **JavaScript**
 
 ---
 

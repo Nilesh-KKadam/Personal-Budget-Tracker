@@ -1,51 +1,220 @@
-     
-<!--All rights are reserved by nkk-->                     
-<!-- Personal Budget Tracker By nilesh Kadam -->                   
-<!DOCTYPE html>             
-<html lang="en">                    
-<!-- Header Section starts -->           
-<head>   
-    <meta charset="UTF-8">              
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">          
-    <title>Personal Budget Tracker For Free</title>                                  
-    <h6>version-0.1</h6>                      
-</head>      
-    
-<body style="background-color: #f0f4f7; margin: 0; padding: 0; color: #333;">      
-<header style="background-color: #130436; color: white; padding: 20px 0; text-align: center;">  
-        
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Budget Tracker For Free</title>
+    <h6>version-0.2</h6>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
- 
-        <h1 style="font-size: 2.5rem; margin: 0;">Personal Budget Tracker 💸</h1>        
-        <nav style="margin-top: 100px;">
-            <a href="#add-expense" style="color: #ffcc00; font-weight: bold; margin-right: 15px; text-decoration: none; font-size: 1.1rem;">Add Expenses 🛒 ➕ 🏠</a> |
-            <a href="#view-budget" style="color: #ffcc00; font-weight: bold; margin-left: 10px; text-decoration: none; font-size: 1.1rem;">know yourBudget 💳</a>
-        </nav>     
-    </header>   
+        body {
+            background-color: #f0f4f7;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
 
-           <!-- Header Section End here -->
+        header {
+            background-color: #130436;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
 
-             
-           
-           <!-- Section start from here -->
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
 
-    <section id="add-expenses" style="padding: 30px 15%; background-color: rgb(255, 255, 255); border-radius: 10px; margin-top: 30px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
-        <h2 style="text-align: center; color: #2d3e50;">Add Income/Expenses</h2>
-        <form id="budget-form" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
-            <div style="flex: 1; min-width: 250px;">
-                <label for="income" style="display: block; margin-bottom: 5px; font-weight: bold;">Income 💵:</label>      
-                <input type="number" id="income" name="income" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+        nav {
+            margin-top: 30px;
+        }
+
+        nav a {
+            color: #ffcc00;
+            font-weight: bold;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        section {
+            padding: 30px 15%;
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            margin: 30px auto 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 1100px;
+        }
+
+        h2, h3 {
+            text-align: center;
+            color: #2d3e50;
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .input-box {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, select, textarea, button {
+            font-size: 1rem;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #ffcc00;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+
+        .remaining-box {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        #remaining {
+            padding: 10px;
+            width: 60%;
+            font-size: 1.2rem;
+            text-align: center;
+            border: 2px solid #ffcc00;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        thead tr {
+            background-color: #f3f3f3;
+        }
+
+        .delete-btn {
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 6px 10px;
+            cursor: pointer;
+        }
+
+        textarea {
+            width: 100%;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            min-height: 110px;
+        }
+
+        .feedback-btn {
+            width: auto;
+            padding: 10px 20px;
+            background-color: #1e3bf7;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #2d3e50;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 16px;
+            margin-top: 50px;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 20px 5%;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            #remaining {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Personal Budget Tracker 💸</h1>
+        <nav>
+            <a href="#add-expenses">Add Expenses 🛒 ➕ 🏠</a> |
+            <a href="#view-budget">Know Your Budget 💳</a>
+        </nav>
+    </header>
+
+    <section id="add-expenses">
+        <h2>Add Income/Expenses</h2>
+
+        <form id="budget-form">
+            <div class="input-box">
+                <label for="income">Income 💵:</label>
+                <input type="number" id="income" name="income" required>
             </div>
-            <br>
 
-            <div style="flex: 1; min-width: 250px;">
-                <label for="expense" style="display: block; margin-bottom: 5px; font-weight: bold;">Expenses 💸:</label>
-                <input type="number" id="expense" name="expense" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
-            </div>   
-            <br>
-            <div style="flex: 1; min-width: 250px;">
-                <label for="category" style="display: block; margin-bottom: 5px; font-weight: bold;">Category 📂:</label>
-                <select id="category" name="category" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+            <div class="input-box">
+                <label for="expense">Expenses 💸:</label>
+                <input type="number" id="expense" name="expense" required>
+            </div>
+
+            <div class="input-box">
+                <label for="category">Category 📂:</label>
+                <select id="category" name="category" required>
                     <option value="housing">🏠 Housing</option>
                     <option value="gym-membership">💪 Gym Membership</option>
                     <option value="furniture">🛋️ Furniture</option>
@@ -55,80 +224,171 @@
                     <option value="groceries">🥕 Groceries</option>
                     <option value="healthcare">💉 Healthcare</option>
                     <option value="insurance">🛡️ Insurance</option>
-                    <option value="education">🎓 Education</option>   
+                    <option value="education">🎓 Education</option>
                     <option value="savings">💰 Savings</option>
                     <option value="dining-out">🍽️ Dining Out</option>
                     <option value="shopping">🛍️ Shopping</option>
                     <option value="utilities">💡 Utilities</option>
                     <option value="subscriptions">📅 Subscriptions</option>
                     <option value="miscellaneous">🔄 Miscellaneous</option>
-                     <option value="phone-bill">📱 Phone Bill</option>
-                 
+                    <option value="phone-bill">📱 Phone Bill</option>
                 </select>
-            </div>     
-
-            <div style="flex: 1; min-width: 250px;">
-                <label for="description" style="display: block; margin-bottom: 5px; font-weight: bold;">Add Note ✍️:</label>
-                <input type="text" id="description" name="description" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
-            </div>
-            <br>
-
-            <div style="flex: 1; min-width: 250px;">
-                <label for="date" style="display: block; margin-bottom: 5px; font-weight: bold;">Select the Date 📅:</label>
-                <input type="date" id="date" name="date" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
             </div>
 
-            <button type="submit" style="width: 100%; padding: 15px; background-color: #ffcc00; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1.1rem; margin-top: 20px;">
-                Submit ✅
-            </button>
+            <div class="input-box">
+                <label for="description">Add Note ✍️:</label>
+                <input type="text" id="description" name="description" placeholder="e.g. Grocery shopping">
+            </div>
+
+            <div class="input-box">
+                <label for="date">Select the Date 📅:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit ✅</button>
         </form>
 
-        <div style="text-align: center; margin-top: 30px;">
+        <div class="remaining-box" id="view-budget">
             <label for="remaining" style="font-weight: bold;">Calculated Amount:</label>
-            <input type="number" id="remaining" name="remaining" style="padding: 10px; width: 60%; font-size: 1.2rem; text-align: center; border: 2px solid #ffcc00; border-radius: 8px; background-color: #f9f9f9;">
+            <input type="number" id="remaining" name="remaining" readonly>
         </div>
 
-        <!-- Expenses Table -->
-        <h3 style="text-align: center; margin-top: 40px;">Expenses List</h3>
-        <table id="expenses-table" style="width: 100%; margin-top: 20px; border-collapse: collapse; text-align: left;">
+        <h3>Expenses List</h3>
+        <table id="expenses-table">
             <thead>
-                <tr style="background-color: #f3f3f3;">
-                    <th style="padding: 10px; border: 1px solid #ccc;">Date</th>
-                    <th style="padding: 10px; border: 1px solid #ccc;">Category</th>
-                    <th style="padding: 10px; border: 1px solid #ccc;">Description</th>
-                    <th style="padding: 10px; border: 1px solid #ccc;">Amount</th>
-                    <th style="padding: 10px; border: 1px solid #ccc;">Actions</th>
+                <tr>
+                    <th>Date</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
-            <tbody id="expense-list">
-    <!-- Expense rows will be added here -->
-            </tbody>
+            <tbody id="expense-list"></tbody>
         </table>
 
-        <textarea name="feedback" id="feedback" placeholder="Add your feedback here..." style="width: 100%; margin-top: 20px; padding: 15px; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem;"></textarea>
-        <br>
-        <button type="submit" style="width:; padding: 10px; background-color: #1e3bf7; color: white; border: none; border-radius: 20px; cursor: pointer; font-size: 1rem; margin-top: 20px;">
-            Submit the Feedback        
+        <form id="feedback-form">
+            <textarea id="feedback" placeholder="Add your feedback here..."></textarea>
+            <button type="submit" class="feedback-btn">Submit the Feedback</button>
+        </form>
     </section>
 
-    <!-- Section End -->
-
-
-    <!-- Footer start -->
-
-    <footer style="background-color: #2d3e50; color: white; padding: 30px 0; text-align: center; font-size: 16px; margin-top: 50px;">
+    <footer>
         <div style="width: 70%; margin: 0 auto;">
-            <p style="font-weight: 400;">© 2025 Personal Budget Tracker. All Rights Reserved by nilesh.kadam.</p>
+            <p>© 2025 Personal Budget Tracker. All Rights Reserved by nilesh.kadam.</p>
             <p>
-                <a href="#" style="color: #ffcc00; font-weight: 500; padding: 0 10px;">Terms & Conditions are apply.</a>
-                
+                <a href="#">Terms & Conditions are apply.</a>
             </p>
-            <p style="font-size: 14px;">By using this website, you agree to our <a href="#" style="color: #ffcc00;">Terms of Service</a> and <a href="#" style="color: #ffcc00">Privacy Policy</a>.</p>
+            <p style="font-size: 14px;">By using this website, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
         </div>
     </footer>
-    <!-- Footer End -->
 
+    <script>
+        const form = document.getElementById('budget-form');
+        const expenseList = document.getElementById('expense-list');
+        const remainingInput = document.getElementById('remaining');
+        const incomeInput = document.getElementById('income');
+        const feedbackForm = document.getElementById('feedback-form');
+
+        let expenses = JSON.parse(localStorage.getItem('budgetExpenses')) || [];
+
+        function calculateRemaining() {
+            const income = Number(incomeInput.value) || 0;
+            const totalExpenses = expenses.reduce((sum, item) => sum + Number(item.amount), 0);
+            const balance = income - totalExpenses;
+
+            remainingInput.value = balance;
+            remainingInput.style.color = balance < 0 ? 'red' : 'green';
+        }
+
+        function renderExpenses() {
+            expenseList.innerHTML = '';
+
+            if (expenses.length === 0) {
+                expenseList.innerHTML = `
+                    <tr>
+                        <td colspan="5" style="padding: 12px; text-align: center; color: #666;">
+                            No expenses added yet.
+                        </td>
+                    </tr>
+                `;
+                calculateRemaining();
+                return;
+            }
+
+            expenses.forEach((item, index) => {
+                const row = document.createElement('tr');
+
+                row.innerHTML = `
+                    <td>${item.date}</td>
+                    <td>${item.category}</td>
+                    <td>${item.description || '—'}</td>
+                    <td>₹${Number(item.amount).toFixed(2)}</td>
+                    <td>
+                        <button type="button" class="delete-btn" data-index="${index}">
+                            Delete
+                        </button>
+                    </td>
+                `;
+
+                expenseList.appendChild(row);
+            });
+
+            document.querySelectorAll('.delete-btn').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const index = Number(e.target.dataset.index);
+                    expenses.splice(index, 1);
+                    localStorage.setItem('budgetExpenses', JSON.stringify(expenses));
+                    renderExpenses();
+                });
+            });
+
+            calculateRemaining();
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const income = Number(incomeInput.value);
+            const expense = Number(document.getElementById('expense').value);
+            const category = document.getElementById('category').value;
+            const description = document.getElementById('description').value;
+            const date = document.getElementById('date').value;
+
+            if (!income || !expense || !date) {
+                alert('Please enter a valid income, expense, and date.');
+                return;
+            }
+
+            expenses.push({
+                income,
+                amount: expense,
+                category,
+                description,
+                date
+            });
+
+            localStorage.setItem('budgetExpenses', JSON.stringify(expenses));
+            form.reset();
+            renderExpenses();
+        });
+
+        feedbackForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const feedback = document.getElementById('feedback').value.trim();
+
+            if (!feedback) {
+                alert('Please enter your feedback.');
+                return;
+            }
+
+            alert('Thank you for the feedback!');
+            feedbackForm.reset();
+        });
+
+        incomeInput.addEventListener('input', calculateRemaining);
+        renderExpenses();
+    </script>
 </body>
-
 </html>
-
